@@ -1,0 +1,25 @@
+<ion-header class="body">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button>Volver</ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <ion-toolbar>
+    <ion-segment (ionChange)="segmentChanged($event)" value="perfil">
+      <ion-segment-button  value="perfil">
+        <ion-icon class="icono" name="person-circle-outline"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button  value="mapa">
+        <ion-icon class="icono" name="map-outline"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="viaje">
+        <ion-icon class="icono" name="car-sport-outline"></ion-icon>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="body ">
+  <ion-router-outlet></ion-router-outlet>
+</ion-content>

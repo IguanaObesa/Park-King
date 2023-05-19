@@ -1,0 +1,33 @@
+<ion-content class="body">
+
+  <br>
+  <ion-card class="card">
+    <ion-card-header>
+      <ion-card-title class="text2"> Prueba 1 </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label> nose@gmail.com </ion-label>
+        </ion-item>
+        <br>
+        <ion-item>
+          <ion-label>Ver Vehìculo(s)</ion-label>
+          <ion-icon name="arrow-forward-outline"></ion-icon>
+        </ion-item>
+        <br>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <br>
+  <ion-row class="ion-align-items-center">
+    <ion-button class="center" strong="True" shape="round" color="secondary" [routerLink]="['/edit-perfil']">Editar
+      perfil</ion-button>
+  </ion-row>
+  <br>
+  <ion-row class="ion-align-items-center">
+    <ion-button class="center" strong="True" shape="round" color="tertiary" [routerLink]="['/add-vehiculo']">Agregar
+      vehiculo</ion-button>
+  </ion-row>
+  <br>
+</ion-content>
