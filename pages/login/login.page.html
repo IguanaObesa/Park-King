@@ -1,0 +1,32 @@
+<ion-content class="body">
+  <br>
+  <br>
+  <div id="container">
+    <br>
+    <ion-img [src]="item.pic" class="logo"></ion-img>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <ion-row class="center">
+      <ion-item class="text" mode="md">
+        <ion-label class="text center" position="floating">Usuario</ion-label>
+        <ion-input class="text" [(ngModel)]="user"></ion-input>
+      </ion-item>
+      <ion-item class="text">
+        <ion-label class="text center" position="floating">Contraseña</ion-label>
+        <ion-input class="text" type="password" [(ngModel)]="pass"></ion-input>
+      </ion-item>
+    </ion-row>
+    <br>
+    <br>
+    <ion-row class="ion-align-items-center">
+      <ion-button class="center" strong="True" color="primary" shape="round" (click)="validar()">Iniciar Sesión</ion-button>
+    </ion-row>
+  </div>
+</ion-content>

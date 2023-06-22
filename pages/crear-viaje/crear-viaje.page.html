@@ -1,0 +1,38 @@
+<ion-header class="body">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button>Volver</ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="body">
+  <div>
+    <ion-list>
+      <ion-item>
+        <ion-select class="text" placeholder="Comuna" [(ngModel)]="sede">
+          <ion-select-option *ngFor="let s of listaSedes" [value]="s.id_sede">{{ s.sede }}</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+    <ion-item class="text">
+      <ion-label position="floating">Hora de disponibilidad</ion-label>
+      <ion-input type="number" [(ngModel)]="hora"></ion-input>
+    </ion-item>
+    <ion-item class="text">
+      <ion-label position="floating">Espacios Disponibles</ion-label>
+      <ion-input type="number" [(ngModel)]="asientos"></ion-input>
+    </ion-item>
+    <ion-item class="text">
+      <ion-label position="floating">Precio del arriendo</ion-label>
+      <ion-input type="number" [(ngModel)]="costo"></ion-input>
+    </ion-item>
+    <br>
+    <ion-button [routerLink]="['/mapita']" shape="round" class="center"> <ion-icon name="locate-outline"></ion-icon>Mapa</ion-button>
+    <br>
+    <br>
+    <ion-row class="ion-align-items-center">
+      <ion-button class="center" strong="True" color="primary" shape="round" (click)="validar()">Poner en arriendo</ion-button>
+    </ion-row>
+  </div>
+</ion-content>

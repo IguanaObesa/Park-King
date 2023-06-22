@@ -1,0 +1,72 @@
+<ion-header class="body">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button>Volver</ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="body">
+  <div>
+    <div>
+      <div *ngFor="let c of pasajeros">
+        <div *ngIf="c.rol_usuario == 1">
+          <ion-card class="card">
+            <h3 class="text centerh">Dueño</h3>
+            <ion-grid>
+              <ion-row>
+                <ion-col size="3">
+                  <img class="perfil3" src="{{ c.foto }}" alt="">
+                </ion-col>
+                <ion-col size="8">
+                  <ion-card-content>
+                    <ion-row class="text">
+                      Nombre: {{ c.nombre }} {{ c.apellido }}
+                    </ion-row>
+                    <ion-row class="text">
+                      Espacios: {{ c.asientos_disp }}
+                    </ion-row>
+                    <ion-row class="text">
+                      Precio: {{ c.costo }} {{ c.tarifa }}
+                    </ion-row>
+                  </ion-card-content>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </ion-card>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div *ngFor="let p of pasajeros">
+        <ion-card *ngIf="p.rol_usuario == 2" class="card">
+          <h3 class="text centerh">Pasajeros</h3>
+          <ion-grid>
+            <ion-row>
+              <ion-col size="5">
+                <img class="perfil3" src="{{ p.foto }}" alt="">
+              </ion-col>
+              <ion-col size="7">
+                <ion-card-content>
+                  <ion-row class="text">
+                    Nombre:
+                  </ion-row>
+                  <ion-row class="text">
+                    {{ p.nombre }} {{ p.apellido }}
+                  </ion-row>
+                </ion-card-content>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card>
+      </div>
+    </div>
+    <br>
+    <div *ngFor="let datos of pasajeros">
+      <div *ngIf="datos.id_usuario ==  1">
+        <ion-button class="center" color="tertiary" shape="round" (click)="cancel()">Cancelar Viaje</ion-button>
+      </div>
+    </div>
+  </div>
+</ion-content>

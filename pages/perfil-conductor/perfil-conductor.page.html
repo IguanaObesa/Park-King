@@ -1,0 +1,33 @@
+<ion-header class="body">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button>Volver</ion-back-button>
+    </ion-buttons>
+    <ion-title class="text">CD-DG-44</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="body">
+  <ion-card *ngFor="let a of arregloAuto" class="card">
+    <ion-card-content>
+      <h1 class="text2" strong="True">Vehiculo</h1>
+      <ion-img [src]="item.pic2" class="info"></ion-img>
+      <label for="" class="text3">Patente: {{ a.patente }}</label><br>
+      <label for="" class="text3">Modelo: {{ a.modelo }} </label><br>
+      <label for="" class="text3">año : {{ a.anio }} </label>
+    </ion-card-content>
+  </ion-card>
+  <br>
+  <ion-card class="card">
+    <ion-card-content>
+      <h1 class="text2" strong="True">Conductor</h1>
+      <ion-img [src]="item.pic" class="perfil2"></ion-img>
+      <label for="" class="text3">Nombre: Arturo Vidal</label>
+    </ion-card-content>
+  </ion-card>
+  <br>
+  <br>
+  <ion-button strong="True" class="center" type="submit" color="secondary" shape="round"
+  (click)="alerta()" [routerLink]="['/home']">Reservar</ion-button>
+  <!-- CREAR WEA PARA HACER LA RESERVA DE LA WEA  --> 
+</ion-content>

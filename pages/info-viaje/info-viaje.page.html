@@ -1,0 +1,47 @@
+<ion-header class="body">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button>Volver</ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="body">
+  <div>
+    <br>
+    <br>
+    <ion-card class="card5" *ngFor="let d of listaViajes">
+      <ion-grid *ngIf="d.asientos_disp >  d.pasajeros">
+        <ion-row *ngIf="d.asientos_disp >  d.pasajeros">
+          <ion-card-content>
+            <ion-row>
+              <img class="perfil3 centerh" src="{{ d.foto }}" alt="">
+            </ion-row>
+            <br>
+            <ion-row class="text" strong="True">
+              Conductor: {{ d.nombre }} {{ d.apellido }}
+            </ion-row>
+            <ion-row class="text" strong="True">
+              Costo: {{ d.costo }}
+            </ion-row>
+            <ion-row class="text" strong="True">
+              Hora de salida: {{ d.hora_salida }}
+            </ion-row>
+            <ion-row class="text" strong="True">
+              Espacios disponibles: {{ d.pasajeros }}/{{ d.asientos_disp }}
+            </ion-row>
+          </ion-card-content>
+        </ion-row>
+        <br>
+        <ion-row *ngIf="d.asientos_disp >  d.pasajeros">
+          <ion-col size="6">
+            <ion-button class="centerh" color="secondary" shape="round" (click)="reservar(d.id_viaje)">Reservar</ion-button>
+          </ion-col>
+          <ion-col size="6">
+            <ion-button class="centerh" color="tertiary" shape="round" (click)="ver(d.inicio, d.destino)">Ver en GPS</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card>
+  </div>
+</ion-content>

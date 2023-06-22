@@ -1,0 +1,41 @@
+<ion-header class="body">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button>Volver</ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="body">
+  <br>
+  <br>
+  <br>
+  <br>
+  <img class="perfil3" *ngIf="picture3" src="{{ pic }}" alt="Oopsies">
+  <img class="perfil3" *ngIf="picture" [src]="picture" alt="">
+  <br>
+  <ion-button class="center4" shape="round" (click)="camera()">Tomar Foto</ion-button>
+  <br>
+  <br>
+  <br>
+  <ion-item>
+    <ion-label class="text center" position="floating">Ingrese su Correo</ion-label>
+    <ion-input class="text" type="email" [(ngModel)]="correo"></ion-input>
+  </ion-item>
+  <br>
+  <ion-item>
+    <ion-label class="text center" position="floating">Ingrese su Nombre</ion-label>
+    <ion-input class="text" [(ngModel)]="nombre"></ion-input>
+  </ion-item>
+  <br>
+  <ion-item>
+    <ion-label class="text center" position="floating">Ingrese su Apellido</ion-label>
+    <ion-input class="text" [(ngModel)]="apellido"></ion-input>
+  </ion-item>
+  <br>
+  <br>
+  <br>
+  <br>
+  <ion-button shape="round" class="center4" color="primary" (click)="validar()">Aceptar</ion-button>
+  <br>
+</ion-content>

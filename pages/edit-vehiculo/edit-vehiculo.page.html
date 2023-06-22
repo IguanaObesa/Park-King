@@ -1,0 +1,31 @@
+<ion-header class="body">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button>Volver</ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="body">
+  <div>
+    <ion-card *ngFor="let a of autos" class="card4">
+      <div>
+        <ion-img class="perfil3" [src]="a.foto"></ion-img>
+      </div>
+      <br>
+      <ion-card-content class="text">Patente: {{ a.patente }}</ion-card-content>
+      <br>
+      <ion-card-content class="text"> Marca: {{ a.marca }}</ion-card-content>
+      <br> 
+      <ion-card-content class="text">Modelo: {{ a.modelo }}</ion-card-content>
+      <ion-row>
+        <ion-col>
+          <ion-button class="center" color="tertiary" shape="round" (click)="editAuto(a)">Editar</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button class="center" color="secondary" shape="round" (click)="borrarAuto(a)">Eliminar</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  </div>
+</ion-content>

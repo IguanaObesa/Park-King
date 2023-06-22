@@ -1,0 +1,23 @@
+<ion-header class="body">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button>Volver</ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="body">
+  <div>
+    <div>
+      <ion-label class="text">Destino: </ion-label>
+      <ion-input class="text" id="destino" type="text" [(ngModel)]="destino" #dirDestino placeholder="aaaa"></ion-input>
+    </div>
+    <br>
+    <div class="mapa" #divMapa></div>
+    <br>
+    <br>
+    <ion-button color="primary" class="center" shape="round" (click)="calcularRuta()">Crear Ruta</ion-button>
+    <br>
+    <ion-button color="secondary" class="center" shape="round" (click)="guardarRuta()">Guardar</ion-button>
+  </div>
+</ion-content>
