@@ -1,0 +1,50 @@
+<ion-content class="body">
+  <br>
+  <img class="perfil3" [src]="user.foto">
+  <br>
+  <ion-card class="card">
+    <ion-card-header>
+      <ion-card-title class="text2"> {{ user.nombre }} {{ user.apellido }} </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label> {{ user.correo }} </ion-label>
+        </ion-item>
+        <br>
+        <ion-item>
+          <ion-label>Editar perfil</ion-label>
+          <ion-icon [routerLink]="['/edit-perfil']" name="arrow-forward-outline"></ion-icon>
+        </ion-item>
+        <br>
+        <ion-item>
+          <ion-label>Ver o Cancelar arriendos</ion-label>
+          <ion-icon (click)="ver()" name="arrow-forward-outline"></ion-icon>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+  <br>
+  <!--
+  <ion-row class="ion-align-items-center">
+    <ion-button class="center" strong="True" shape="round" color="secondary" [routerLink]="['/edit-vehiculo']">Ver vehiculos</ion-button>
+  </ion-row>
+  <br>
+  
+  <ion-row class="ion-align-items-center">
+    <ion-button class="center" strong="True" shape="round" color="tertiary" [routerLink]="['/add-vehiculo']">Agregar
+      vehiculo</ion-button>
+  </ion-row>
+  <br>
+  -->
+  <ion-row class="ion-align-items-center">
+    <ion-button class="center" strong="True" shape="round" color="primary" [routerLink]="['/login']"> ¡¡Salir!!
+    </ion-button>
+  </ion-row>
+  <br>
+  <ion-row *ngIf="user.rol == 1" class="ion-align-items-center">
+    <ion-button class="center" strong="True" shape="round" color="primary" [routerLink]="['/enabled']">Administrar
+      Usuarios</ion-button>
+  </ion-row>
+  <br>
+</ion-content>

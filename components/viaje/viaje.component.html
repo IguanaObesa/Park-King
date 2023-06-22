@@ -1,0 +1,20 @@
+<ion-content class="body">
+  <div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <ion-list>
+      <ion-item>
+        <ion-select class="text" placeholder="Comuna" [(ngModel)]="sede">
+          <ion-select-option *ngFor="let s of listaSedes" [value]="s.id_sede">{{ s.sede }}</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+    
+    <ion-button color="primary" class="center5" shape="round" (click)="buscarViaje()">Buscar</ion-button>
+  </div>
+</ion-content>
